@@ -1,0 +1,95 @@
+body{
+  font-family: HYWenHei-85W; /*--, Geneva, Tahoma, sans-serif--*/
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+  background: #14A490;
+  color: white;
+}
+
+
+button{
+  background: none;
+  border: 2px solid rgb(44, 85, 76);
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: rgb(44, 85, 76);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+
+button:hover{
+  background: rgb(21, 59, 59);
+  color: white;
+}
+
+title{
+  color: rgb(0, 0, 0);
+}
+
+.App{
+  max-width: 860px;
+  margin: 40px auto;
+}
+
+.card-grid{
+
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap:20px ;
+}
+.front{
+  height: 200px;
+  width: 200px;
+}
+.back{
+  height: 200px;
+  width: 200px;
+}
+.card img{
+  width: 100%;
+  display: block;
+  border: solid rgb(71, 133, 112);
+  border-radius: 8px;
+}
+.card{
+  position: relative;
+}
+
+.card .front{
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
+  position: absolute;
+}
+
+.turned .front{
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+.card .back{
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+
+.turned .back{
+  transform: rotateY(90deg);
+  transition-delay: 0.2s;
+}
+
+.none{
+  display: none;
+}
+
+.banner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  background: rgb(26, 128, 128);
+  padding: 30px 200px;
+  color: black;
+}
