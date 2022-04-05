@@ -1,12 +1,12 @@
 var winner = false
 
 const ImagenCarta=[
-    {"src":"/Fotos/albedo.jpg", match : false, volteada: false},
-    {"src":"/Fotos/kazuha.jpg", match : false, volteada: false},
-    {"src":"/Fotos/diluc.jpg", match : false, volteada: false},
-    {"src":"/Fotos/gorou.jpg", match : false, volteada: false},
-    {"src":"/Fotos/thomas.jpg", match : false, volteada: false},
-    {"src":"/Fotos/xiao.jpg", match : false, volteada: false},
+    {"src":"./albedo.jpg", match : false, volteada: false},
+    {"src":"./kazuha.jpg", match : false, volteada: false},
+    {"src":"./diluc.jpg", match : false, volteada: false},
+    {"src":"./gorou.jpg", match : false, volteada: false},
+    {"src":"./thomas.jpg", match : false, volteada: false},
+    {"src":"./xiao.jpg", match : false, volteada: false},
 ]
 
 const App = () =>{
@@ -67,7 +67,7 @@ const App = () =>{
     React.useEffect(() => {
         for( const card of cards){
             if(card.match===true){
-                setWin(prevwin => prevwin + 1)
+                setwin(prevwin => prevwin + 1)
             }
         }
         if(win === 30){
@@ -91,7 +91,7 @@ const App = () =>{
                     <div className="card" key={card.id}>
                         <div className={card.turned ? "turned" : ""}>
                             <img className="front" src={card.src} alt="card front"/>
-                            <img className="back" src="/Fotos/fondo.jpg" alt="card back"  onClick={()=>{handleClick(card)}}/>
+                            <img className="back" src="./fondo.jpg" alt="card back"  onClick={()=>{handleClick(card)}}/>
                         </div>
                     </div>
     
@@ -102,7 +102,7 @@ const App = () =>{
                 </div>
             </div>
             <div className="footer">
-                <p className="foot_element">Movimientos: {turnos}</p>
+                <p className="foot_element">Movimientos: {turn}</p>
             </div>
             
     
@@ -111,3 +111,8 @@ const App = () =>{
     )
 
 }
+
+ReactDOM.render(
+    <App/>,
+    document.getElementById('root')
+);
